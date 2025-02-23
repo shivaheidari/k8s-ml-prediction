@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: emotion-api
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: emotion-api
+  template:
+    metadata:
+      labels:
+        app: emotion-api
+    spec:
+      containers:
+        - name: emotion-api-container
+          image: shiva2020/emoimage:latest  
+          ports:
+            - containerPort: 8080
